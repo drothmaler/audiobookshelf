@@ -34,12 +34,23 @@ const AudioMetadataMangaer = require('./managers/AudioMetadataManager')
 const RssFeedManager = require('./managers/RssFeedManager')
 
 class Server {
+  /**
+   * @param {string} SOURCE
+   * @param {string|number} PORT
+   * @param {string} HOST
+   * @param {string|number} UID
+   * @param {string|number} GID
+   * @param {string} CONFIG_PATH
+   * @param {string} METADATA_PATH
+   */
   constructor(SOURCE, PORT, HOST, UID, GID, CONFIG_PATH, METADATA_PATH) {
-    this.Port = PORT
+    /** @type {number} */
+    this.Port = Number(PORT)
+    /** @type {string} */
     this.Host = HOST
     global.Source = SOURCE
-    global.Uid = isNaN(UID) ? 0 : Number(UID)
-    global.Gid = isNaN(GID) ? 0 : Number(GID)
+    global.Uid = Number.isNaN(UID) ? 0 : Number(UID)
+    global.Gid = Number.isNaN(GID) ? 0 : Number(GID)
     global.ConfigPath = Path.normalize(CONFIG_PATH)
     global.MetadataPath = Path.normalize(METADATA_PATH)
 

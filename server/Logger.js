@@ -9,10 +9,16 @@ class Logger {
     this.logManager = null
   }
 
+  /**
+   * @returns {string}
+   */
   get timestamp() {
     return date.format(new Date(), 'YYYY-MM-DD HH:mm:ss')
   }
 
+  /**
+   * @returns {keyof LogLevel | "UNKNOWN"}
+   */
   get levelString() {
     for (const key in LogLevel) {
       if (LogLevel[key] === this.logLevel) {
@@ -22,6 +28,10 @@ class Logger {
     return 'UNKNOWN'
   }
 
+  /**
+   * @param {number} level 
+   * @returns {keyof LogLevel | "UNKNOWN"}
+   */
   getLogLevelString(level) {
     for (const key in LogLevel) {
       if (LogLevel[key] === level) {
@@ -52,6 +62,10 @@ class Logger {
     this.socketListeners = this.socketListeners.filter(s => s.id !== socketId)
   }
 
+  /**
+   * @param {number} level 
+   * @param {...*} args 
+   */
   handleLog(level, args) {
     const logObj = {
       timestamp: this.timestamp,
@@ -71,6 +85,9 @@ class Logger {
     })
   }
 
+  /**
+   * @param {number} level 
+   */
   setLogLevel(level) {
     this.logLevel = level
     this.debug(`Set Log Level to ${this.levelString}`)

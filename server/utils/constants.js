@@ -1,4 +1,9 @@
-module.exports.ScanResult = {
+module.exports.ScanResult = 
+/**
+ * @readonly
+ * @enum {number}
+ */
+ {
   NOTHING: 0,
   ADDED: 1,
   UPDATED: 2,
@@ -6,17 +11,33 @@ module.exports.ScanResult = {
   UPTODATE: 4
 }
 
-module.exports.BookCoverAspectRatio = {
+module.exports.BookCoverAspectRatio = 
+/**
+ * @readonly
+ * @enum {number}
+ */
+ {
   STANDARD: 0, // 1.6:1
   SQUARE: 1
 }
 
-module.exports.BookshelfView = {
+module.exports.BookshelfView = 
+/**
+ * @readonly
+ * @enum {number}
+ */
+ {
   STANDARD: 0,
   TITLES: 1
 }
 
-module.exports.LogLevel = {
+module.exports.LogLevel = 
+/**
+ * @typedef LogLevelEnum
+ * @readonly
+ * @enum {number}
+ */
+ {
   TRACE: 0,
   DEBUG: 1,
   INFO: 2,
@@ -26,14 +47,24 @@ module.exports.LogLevel = {
   NOTE: 6
 }
 
-module.exports.PlayMethod = {
+module.exports.PlayMethod = 
+/**
+ * @readonly
+ * @enum {number}
+ */
+ {
   DIRECTPLAY: 0,
   DIRECTSTREAM: 1,
   TRANSCODE: 2,
   LOCAL: 3
 }
 
-module.exports.AudioMimeType = {
+module.exports.AudioMimeType = 
+/**
+ * @readonly
+ * @enum {string}
+ */
+ {
   MP3: 'audio/mpeg',
   M4B: 'audio/mp4',
   M4A: 'audio/mp4',
@@ -47,6 +78,11 @@ module.exports.AudioMimeType = {
   AIFF: 'audio/x-aiff'
 }
 
-module.exports.VideoMimeType = {
+module.exports.VideoMimeType = 
+/**
+ * @readonly
+ * @enum {string}
+ */
+ {
   MP4: 'video/mp4'
 }

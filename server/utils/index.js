@@ -34,13 +34,21 @@ module.exports.levenshteinDistance = levenshteinDistance
 module.exports.isObject = (val) => {
   return val !== null && typeof val === 'object'
 }
-
+/**
+ * @param {string} path1 
+ * @param {string} path2 
+ * @returns {boolean}
+ */
 module.exports.comparePaths = (path1, path2) => {
   return path1 === path2 || Path.normalize(path1) === Path.normalize(path2)
 }
 
+/**
+ * @param {unknown} num 
+ * @returns {boolean}
+ */
 module.exports.isNullOrNaN = (num) => {
-  return num === null || isNaN(num)
+  return num === null || Number.isNaN(num)
 }
 
 const xmlToJSON = (xml) => {
